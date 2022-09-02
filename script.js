@@ -3,7 +3,7 @@ var characterAmountNumber = document.getElementById('passAmountNumber')
 var includeUppercaseElement = document.getElementById('includeUppercase')
 var includeNumbersElement = document.getElementById('includeNumbers')
 var includeSymbolsElement = document.getElementById('includeSymbols')
-var form = document.getElementById('passwordGeneratorForm')
+var form = document.getElementById('generate')
 var endpass = document.getElementById('endpass')
 
 /* This submit buttons calls and changes the value every time the button is pressed. As you can see these variables check if the check boxes are selected and what the value of character amount is. These variables then called in the password variable that has a function that randomly sorts that characters within the numbers, letters, and symbols. */
@@ -46,6 +46,7 @@ function generatePassword(characterAmount, includeUppercase, includeNumbers, inc
   var passwordCharacters = []
   for (let i = 0; i < characterAmount; i++) {
     var characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+    /*String.fromcharCode converts the values from charcode into string whihc can be manipulated and displayed in the password generator*/
     passwordCharacters.push(String.fromCharCode(characterCode))
   }
   return passwordCharacters.join('')
